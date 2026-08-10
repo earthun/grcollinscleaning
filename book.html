@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Book a Walkthrough | GR Collins Commercial Cleaning</title>
+<meta name="description" content="Schedule a free on-site walkthrough with GR Collins Commercial Cleaning — personalized cleaning and facility maintenance for San Antonio businesses since 2011." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+
+<style>
+  /* ---------- Page-specific hero override ---------- */
+  .hero{
+    position:relative;
+    min-height:52vh;
+    display:flex;
+    align-items:center;
+    background-image:
+      linear-gradient(100deg, rgba(36,37,39,0.72) 0%, rgba(36,37,39,0.42) 45%, rgba(36,37,39,0.20) 100%),
+      url('https://grcollinscleaning.com/wp-content/uploads/2020/04/cleaning-washing-cleanup-the-ilo-48889.jpeg');
+    background-size:cover;
+    background-position:27% 25%;
+  }
+  .hero-inner{ max-width:var(--max); margin:0 auto; padding:80px 28px; width:100%; }
+  .eyebrow{
+    text-transform:uppercase;
+    letter-spacing:2.5px;
+    font-size:12.5px;
+    font-weight:500;
+    color:var(--tan);
+    margin:0 0 18px;
+  }
+  .hero h1{
+    font-weight:300;
+    text-transform:uppercase;
+    letter-spacing:1.5px;
+    font-size:clamp(30px, 4.4vw, 46px);
+    color:#fdf6ee;
+    margin:0 0 22px;
+    max-width:640px;
+    line-height:1.2;
+  }
+  .hero p{
+    font-family:'Libre Baskerville', serif;
+    color:#f1e3d2;
+    font-size:17px;
+    max-width:480px;
+    margin:0;
+  }
+
+  /* ---------- Scheduling section ---------- */
+  .schedule-section{
+    background:var(--cream);
+    padding:72px 0 84px;
+  }
+  .schedule-heading{ text-align:center; max-width:620px; margin:0 auto 40px; }
+  .schedule-heading .eyebrow{ color:var(--pink-dark); text-align:center; }
+  .schedule-heading h2{
+    font-weight:300;
+    font-size:clamp(24px,3vw,32px);
+    text-transform:uppercase;
+    letter-spacing:1px;
+    color:var(--ink);
+    margin:0 0 14px;
+  }
+  .schedule-heading p{ color:var(--ink-soft); margin:0; font-size:16px; }
+
+  .booking-card{
+    max-width:760px;
+    margin:0 auto;
+    background:var(--white);
+    border-radius:4px;
+    box-shadow:0 18px 50px -20px rgba(36,37,39,0.35);
+    overflow:hidden;
+    border-top:4px solid var(--pink);
+  }
+  .booking-card .calendly-inline-widget{
+    min-width:280px;
+    height:680px;
+  }
+  .booking-fallback{
+    padding:48px 40px;
+    text-align:center;
+  }
+  .booking-fallback p{ color:var(--ink-soft); margin:0 0 20px; }
+  .btn{
+    display:inline-block;
+    background:var(--pink);
+    color:var(--white);
+    text-decoration:none;
+    font-size:14px;
+    font-weight:500;
+    letter-spacing:0.5px;
+    padding:14px 30px;
+    border-radius:2px;
+    transition:background .2s ease;
+  }
+  .btn:hover{ background:var(--pink-dark); color:var(--white); }
+
+  /* ---------- Walkthrough checklist (signature element) ---------- */
+  .checklist-section{
+    padding:88px 0;
+    background:var(--white);
+  }
+  .checklist-grid{
+    display:grid;
+    grid-template-columns: 0.9fr 1.4fr;
+    gap:56px;
+    align-items:start;
+  }
+  .checklist-intro .eyebrow{ color:var(--pink-dark); }
+  .checklist-intro h2{
+    font-weight:300;
+    font-size:clamp(22px,3vw,30px);
+    text-transform:uppercase;
+    letter-spacing:1px;
+    margin:0 0 18px;
+    line-height:1.3;
+  }
+  .checklist-intro p{ color:var(--ink-soft); font-size:16px; }
+
+  .clipboard{
+    background:var(--tan);
+    border-radius:6px;
+    padding:8px;
+    position:relative;
+  }
+  .clipboard::before{
+    content:"";
+    position:absolute;
+    top:-14px; left:50%;
+    transform:translateX(-50%);
+    width:88px; height:26px;
+    background:var(--tan-dark);
+    border-radius:6px;
+  }
+  .clipboard-paper{
+    background:var(--white);
+    border-radius:3px;
+    padding:36px 32px;
+  }
+  .clipboard-paper ol{
+    list-style:none;
+    margin:0; padding:0;
+    counter-reset: step;
+  }
+  .clipboard-paper li{
+    counter-increment: step;
+    display:flex;
+    gap:16px;
+    padding:18px 0;
+    border-bottom:1px solid var(--cream);
+  }
+  .clipboard-paper li:last-child{ border-bottom:none; }
+  .clipboard-paper li::before{
+    content: counter(step);
+    flex:none;
+    width:28px; height:28px;
+    border:1.5px solid var(--pink);
+    color:var(--pink-dark);
+    border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    font-family:'IBM Plex Sans', sans-serif;
+    font-size:13px; font-weight:600;
+  }
+  .clipboard-paper .step-title{
+    font-family:'IBM Plex Sans', sans-serif;
+    font-weight:600;
+    font-size:15px;
+    margin:0 0 4px;
+    color:var(--ink);
+  }
+  .clipboard-paper .step-copy{
+    font-size:14.5px;
+    color:var(--ink-soft);
+    margin:0;
+  }
+
+  @media (max-width: 820px){
+    header.site{ flex-direction:column; gap:16px; align-items:flex-start; }
+    nav.main-nav ul{ flex-wrap:wrap; gap:18px; }
+    .checklist-grid{ grid-template-columns:1fr; }
+  }
+
+  /* ---------- Footer ---------- */
+  footer.site{
+    background:var(--ink);
+    color:#cfcfcf;
+    padding:40px 28px;
+    text-align:center;
+    font-family:'IBM Plex Sans', sans-serif;
+    font-size:13px;
+    letter-spacing:0.3px;
+  }
+  footer.site a{ color:#e7c6a6; text-decoration:none; }
+  footer.site a:hover{ color:var(--tan); }
+
+  @media (prefers-reduced-motion: reduce){
+    html{ scroll-behavior:auto; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site">
+  <a class="logo" href="index.html">GR Collins Commercial Cleaning</a>
+  <nav class="main-nav" aria-label="Main">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="book.html" class="cta active">Book Now</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <p class="eyebrow">Free On-Site Walkthrough</p>
+    <h1>Let's take a look at your space</h1>
+    <p>Pick a time below and we'll come see your facility in person — no obligation, just a clear plan built around what you actually need.</p>
+  </div>
+</section>
+
+<section class="schedule-section" id="schedule">
+  <div class="wrap">
+    <div class="schedule-heading">
+      <p class="eyebrow">Schedule</p>
+      <h2>Find a time that works</h2>
+      <p>Consultations run about 20–30 minutes, on-site or by phone — whichever is easier for you.</p>
+    </div>
+
+    <div class="booking-card">
+      <!-- Calendly inline widget begin -->
+      <div class="calendly-inline-widget" data-url="https://calendly.com/YOUR-CALENDLY-LINK" style="min-width:280px; height:680px;"></div>
+      <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+      <!-- Calendly inline widget end -->
+
+      <!-- Fallback shown only if you haven't set up Calendly yet — delete this div once the widget above is live -->
+      <!--
+      <div class="booking-fallback">
+        <p>Online booking is launching soon.</p>
+        <a class="btn" href="tel:+12105550123">Call to schedule</a>
+      </div>
+      -->
+    </div>
+  </div>
+</section>
+
+<section class="checklist-section">
+  <div class="wrap checklist-grid">
+    <div class="checklist-intro">
+      <p class="eyebrow">What to expect</p>
+      <h2>Your walkthrough, step by step</h2>
+      <p>Every job starts the same way, whether it's a small office suite or a multi-tenant retail space — we look before we clean.</p>
+    </div>
+
+    <div class="clipboard">
+      <div class="clipboard-paper">
+        <ol>
+          <li>
+            <div>
+              <p class="step-title">We walk the space together</p>
+              <p class="step-copy">You show us the areas that matter most — high traffic zones, sensitive equipment, problem spots.</p>
+            </div>
+          </li>
+          <li>
+            <div>
+              <p class="step-title">We build a custom scope</p>
+              <p class="step-copy">A written plan covering frequency, tasks, and pricing — specific to your facility, not a generic package.</p>
+            </div>
+          </li>
+          <li>
+            <div>
+              <p class="step-title">You review and approve</p>
+              <p class="step-copy">No pressure. Ask questions, request changes, and start whenever you're ready.</p>
+            </div>
+          </li>
+          <li>
+            <div>
+              <p class="step-title">We get to work</p>
+              <p class="step-copy">Consistent, detail-oriented service from the same team that walked your space with you.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site">
+  <p>GR Collins Commercial Cleaning &middot; San Antonio &amp; New Braunfels, TX &middot; Serving businesses since 2009</p>
+  <p class="foot-links"><a href="tel:2103741659">210-374-1659</a> &middot; <a href="mailto:geoffrey@grcollinscleaning.com">geoffrey@grcollinscleaning.com</a></p>
+</footer>
+
+</body>
+</html>
